@@ -1,12 +1,12 @@
-// src/components/HeroSection.js
+
 import React from 'react';
 import { Zap, TrendingUp, HandCoins, Factory, ChevronRight, PlusCircle } from 'lucide-react';
 
-// Import your images
+
 import dechargeDevice from '../assets/7710bf1e92e594edc4b5057539b74f85f9532463 (1).png';
 import cShape from '../assets/753046369971ebc7edb3c73571b5dbb191a7f4d7.png';
 
-// Placeholder avatar images
+
 const avatar1 = "https://via.placeholder.com/30/007bff/ffffff?Text=U1";
 const avatar2 = "https://via.placeholder.com/30/28a745/ffffff?Text=U2";
 const avatar3 = "https://via.placeholder.com/30/ffc107/000000?Text=U3";
@@ -14,10 +14,8 @@ const avatar3 = "https://via.placeholder.com/30/ffc107/000000?Text=U3";
 const HeroSection = () => {
   return (
     <div
-      className="relative min-h-screen text-white flex flex-col items-center justify-center py-0 px-5 overflow-hidden z-10"
-      style={{
-        background: 'white' 
-      }}
+      className="relative min-h-screen text-white flex flex-col items-center justify-center py-0 px-5 overflow-hidden z-10 bg-blue-50/90"
+     
     >
       {/* Main Content Box */}
       <div className="relative bg-[#10141D] h-screen p-0 sm:p-0 md:pt-16 sm:pb-0 rounded-3xl shadow-2xl w-full max-w-8xl mx-auto border border-slate-700/50 z-20 py-0 mb-0">
@@ -82,7 +80,7 @@ const HeroSection = () => {
           </button>
         </div>
 
-        {/* Charger Image and Glows Section */}
+       
         <div className="relative w-full max-w-6xl mx-auto flex items-center justify-center py-0 z-0 mt-40 z-0">
           {/* Left Glow */}
           <img

@@ -1,9 +1,8 @@
 // src/components/DechargeMiniSection.js
 import React from 'react';
-import Button from './Button'; // Assuming your glossy Button component
+import Button from './Button'; 
 import Image from 'next/image';
-// Make sure this path is correct relative to your project structure
-// If 'dechargeMiniImage' is in 'src/assets', the path is likely correct.
+
 import dechargeMiniImage from '../assets/3963aed2e7506a6c050877cef54991ccd3921acf (1).png';
 
 // Placeholder avatars
@@ -39,20 +38,18 @@ const CountdownSegment = ({ value, label }) => (
 
 const DechargeMiniSection = () => {
   return (
-    <div className="p-1 sm:p-2 md:p-3 bg-white"> {/* Minimal outer white padding */}
+    <div className="p-6 sm:p-2 md:p-6 bg-white"> 
       <div className="bg-[#080B12] text-gray-200 rounded-xl md:rounded-2xl shadow-xl shadow-blue-900/20 p-6 sm:p-8 md:p-10 relative">
-        {/* Top Section */}
-        <div className="mb-10 md:mb-12"> {/* Removed text-center/md:text-left for now, as target is centered */}
+        
+        <div className="mb-10 md:mb-12"> 
           <div className="flex items-center justify-start mb-3">
-            <span className={`inline-block bg-[#1A2332] ${accentBlue} text-[9px] font-bold uppercase px-2.5 py-1 rounded-full`}>
+            <span className="inline-block px-2.5 py-1 rounded-full font-bold uppercase text-[9px] bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
               What It Is?
             </span>
-            {/* Line next to the badge - can be tricky with Tailwind alone for exact length/position */}
-            {/* This is a simple way, adjust width/color as needed */}
             <span className="h-px w-10 bg-gray-700 ml-3"></span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
-            Meet The DeCharge <span className={`${accentBlue}`}>Mini</span>
+            Meet The DeCharge <span className="bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">Mini</span>
           </h2>
           <p className="text-sm text-gray-400 max-w-lg"> {/* Slightly increased max-width */}
             The perfect 3.3kW street-level solution for India's growing EV market
@@ -63,20 +60,19 @@ const DechargeMiniSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mb-12 md:mb-16 items-center">
           {/* Left: Image (takes approx 5/12 cols) */}
           <div className="lg:col-span-5 flex justify-center items-center">
-            <div className="relative w-full max-w-[400px] sm:max-w-[400px] md:max-w-[320px] mx-auto">
+            <div className="relative w-full max-w-[600px] sm:max-w-[400px] md:max-w-[920px] mx-auto">
               <Image
                 src={dechargeMiniImage}
                 alt="DeCharge Mini Product"
                 layout="responsive" 
-                width={dechargeMiniImage.width} 
-                height={dechargeMiniImage.height} 
+                
+                
                 priority 
-                className="filter drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]" // Custom drop shadow for product
+                className="filter drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)] w-full h-full" // Custom drop shadow for product
               />
             </div>
           </div>
 
-          {/* Right: Tech Specs (takes approx 7/12 cols) */}
           <div className="lg:col-span-7">
             <h3 className={`text-xs font-bold uppercase ${accentBlue} mb-4 tracking-wider`}>Tech Specs</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

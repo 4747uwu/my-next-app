@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between py-4 px-6 md:px-24 bg-white w-full">
+    <nav className="flex items-center justify-between py-4 px-6 md:px-24 bg-blue-50/90 w-full">
       <div className="flex-shrink-0">
         <a href="#" className="text-blue-800 font-bold text-2xl md:text-3xl">DECHarGE</a>
       </div>

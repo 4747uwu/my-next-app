@@ -3,8 +3,7 @@ import React from 'react';
 import Button from './Button'; // Assuming Button.js is in the same directory
 import Image from 'next/image';
 
-// Placeholder icons (replace with actual SVGs or icon components for best results)
-// Ensure these icons can inherit color or are styled directly if they are SVGs
+
 const PackageIcon = () => <span className="text-2xl text-blue-500">📦</span>;
 const StarIcon = () => <span className="text-2xl text-blue-500">⭐</span>;
 const ClockIcon = () => <span className="text-2xl text-blue-500">🕒</span>;
