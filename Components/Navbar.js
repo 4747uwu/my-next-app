@@ -33,10 +33,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`relative top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`relative z-50 transition-all duration-300 ${
       isScrolled ? 'py-2 bg-blue-50/95 backdrop-blur-md shadow-md' : 'py-4 bg-blue-50/90'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-24">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-10 lg:px-24">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0 relative z-50">
@@ -107,7 +107,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Fixed overlay */}
       <div 
         className={`md:hidden fixed inset-0 z-40 bg-blue-50/98 backdrop-blur-lg transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
