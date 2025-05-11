@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Button from './Button'; 
+import Button from './Button';
 import Image from 'next/image';
 import Waves from './waves/Waves';
 
@@ -26,7 +26,7 @@ const TechSpecCard = ({ title, description }) => (
   <div className="bg-[#10151D] p-5 rounded-xl h-full min-h-[180px] w-full flex flex-col relative overflow-hidden group">
     {/* Waves background animation */}
     <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
-      <Waves 
+      <Waves
         lineColor="rgba(79, 128, 232, 0.4)"
         backgroundColor="transparent"
         waveSpeedX={0.0075}
@@ -67,15 +67,15 @@ const CountdownSegment = ({ value }) => (
     <div className="relative">
       {/* Background with 3D effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0F1319] to-[#080B12] rounded-lg transform translate-y-0.5 blur-sm"></div>
-      
+
       {/* Main display */}
       <div className="relative bg-[#0A0E16] overflow-hidden rounded-lg px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 border-t border-[#1c2334] shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
         {/* Subtle glow effect */}
         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-blue-900/5"></div>
-        
+
         {/* Inner reflection */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent"></div>
-        
+
         {/* Number display */}
         <span className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-300">
           {value}
@@ -87,18 +87,26 @@ const CountdownSegment = ({ value }) => (
 
 const DechargeMiniSection = () => {
   return (
-    <div className="p-2 sm:p-4 md:p-6 bg-blue-50/90"> 
+    <div className="p-2 sm:p-4 md:p-6 bg-blue-50/90">
       <div className="bg-[#080B12] min-h-screen text-gray-200 rounded-xl md:rounded-2xl shadow-xl shadow-blue-900/20 p-4 sm:p-6 md:p-8 lg:p-10 relative overflow-hidden">
-        
+
         {/* Header Section */}
-        <div className="mb-6 md:mb-8 lg:mb-12 md:ml-16 ml-0"> 
-          <div className="flex items-center mb-4">
-            <div className="bg-[#10151D] inline-block px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">
-              <span className="text-[8px] sm:text-[10px] font-bold uppercase tracking-wider text-blue-400">
-                What It Is?
-              </span>
+        <div className="mb-6 md:mb-8 lg:mb-12 md:ml-16 ml-0">
+          <div className="flex items-center">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center mb-8">
+                {/* Gradient Text with Border and Glow */}
+                <span className="mx-3 text-xs uppercase tracking-widest bg-gradient-to-r from-sky-100 via-blue-200 to-indigo-500 bg-clip-text text-transparent border border-blue-500 px-4 py-1 rounded-full shadow-[0_0_12px_rgba(59,130,246,0.6)] backdrop-blur-sm">
+                  What it is
+                </span>
+
+
+                {/* Right Line with clip-path and gradient */}
+                <div className="h-[2px] w-10 bg-gradient-to-r from-transparent via-blue-500 to-transparent relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-sm opacity-50 clip-diagonal rotate-180"></div>
+                </div>
+              </div>
             </div>
-            <div className="h-px w-10 sm:w-16 bg-gray-700 ml-2 sm:ml-3"></div>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-2 sm:mb-3">
             Meet The <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-sky-100 to-blue-600 bg-clip-text text-transparent">DeCharge</span> <span className="text-blue-400">Mini</span>
@@ -128,7 +136,7 @@ const DechargeMiniSection = () => {
               />
             </div>
           </div>
-          
+
           {/* Tech Specs Section */}
           <div className="lg:col-span-7">
             <h3 className={`text-xs font-bold uppercase ${accentBlue} mb-3 sm:mb-4 tracking-wider`}>TECH SPECS</h3>
@@ -188,17 +196,17 @@ const DechargeMiniSection = () => {
             <CountdownSegment value="0" />
             <CountdownSegment value="4" />
             <span className="text-lg sm:text-xl font-semibold text-gray-500 mx-0.5 sm:mx-1">:</span>
-            
+
             {/* Hours */}
             <CountdownSegment value="2" />
             <CountdownSegment value="1" />
             <span className="text-lg sm:text-xl font-semibold text-gray-500 mx-0.5 sm:mx-1">:</span>
-            
+
             {/* Minutes */}
             <CountdownSegment value="4" />
             <CountdownSegment value="1" />
           </div>
-          
+
           {/* Enhanced CTA Button */}
           <Button className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] mx-auto py-2.5 sm:py-3 md:py-3.5 px-4 sm:px-6 md:px-8 text-xs sm:text-sm font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-md transition-all duration-300 shadow-lg shadow-blue-900/20 hover:shadow-blue-900/30">
             Reserve Your Bundle Now

@@ -348,9 +348,7 @@ const JoinCommunityCTA = () => {
         {/* Left Text Content */}
         <div className="md:w-3/5 lg:w-2/3 space-y-3 sm:space-y-4 md:space-y-6 text-center md:text-left p-6 sm:p-8 md:p-10 lg:p-12">
           <div className="flex items-center justify-center md:justify-start space-x-2">
-            <div className="bg-slate-700 p-1 sm:p-1.5 rounded-full">
-              <LightningBoltIcon className="w-3 h-3 sm:w-4 sm:h-4 text-sky-400" />
-            </div>
+            
             <span className="text-xs font-semibold text-sky-400 uppercase tracking-wider">
               Don't Wait
             </span>
@@ -377,9 +375,9 @@ const JoinCommunityCTA = () => {
           
           {/* Decorative dots (only visible on md+ screens) */}
           <div className="hidden md:flex absolute bottom-[-20px] left-[calc(50%-1.5rem)] md:left-[-10px] space-x-2 opacity-30">
-            <div className="w-2 h-2 md:w-3 md:h-3 bg-slate-600 rounded-full"></div>
-            <div className="w-2 h-2 md:w-3 md:h-3 bg-slate-600 rounded-full"></div>
-            <div className="w-2 h-2 md:w-3 md:h-3 bg-slate-600 rounded-full"></div>
+            {/* <div className="w-2 h-2 md:w-3 md:h-3 bg-slate-600 rounded-full"></div> */}
+            {/* <div className="w-2 h-2 md:w-3 md:h-3 bg-slate-600 rounded-full"></div>
+            <div className="w-2 h-2 md:w-3 md:h-3 bg-slate-600 rounded-full"></div> */}
           </div>
         </div>
 
