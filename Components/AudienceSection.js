@@ -1,11 +1,12 @@
 // src/components/AudienceSection.js
 import React from 'react';
-import TestimonialCard from './TestimonialCard'; 
+import TestimonialCard from './TestimonialCard'; // Adjust path
 
+// Assume testimonialsData is the same as in the previous correct version
 const testimonialsData = [
   {
     id: 1,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?portrait,man,coding', 
+    avatarUrl: 'https://source.unsplash.com/random/100x100/?portrait,man,coding,lines',
     avatarBgClass: 'bg-sky-100',
     name: 'Phil Hedayatnia',
     isVerified: true,
@@ -17,7 +18,7 @@ const testimonialsData = [
   },
   {
     id: 2,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?portrait,man,suit',
+    avatarUrl: 'https://source.unsplash.com/random/100x100/?portrait,man,suit,outdoor',
     avatarBgClass: 'bg-slate-100',
     name: 'Pratik',
     isVerified: true,
@@ -29,14 +30,14 @@ const testimonialsData = [
       "- 150+ Locations",
       "- 500+ Paying Customers",
       "- 630k+ Charging Minutes",
-      " ", 
+      " ",
       "Join Us To Learn More From @DoctorPrkabout Their Grand Vision In Revolutionising DePin Space"
     ],
     highlightTerm: '@DeCharge__',
   },
   {
     id: 3,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?portrait,woman,tech',
+    avatarUrl: 'https://source.unsplash.com/random/100x100/?portrait,woman,tech,neon',
     avatarBgClass: 'bg-teal-50',
     name: 'Mattytay',
     isVerified: true,
@@ -48,7 +49,7 @@ const testimonialsData = [
   },
   {
     id: 4,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?abstract,logo',
+    avatarUrl: 'https://source.unsplash.com/random/100x100/?abstract,logo,dark',
     avatarBgClass: 'bg-neutral-800',
     name: 'DePHY',
     isVerified: true,
@@ -66,7 +67,7 @@ const testimonialsData = [
   },
    {
     id: 5,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?robot,future',
+    avatarUrl: 'https://source.unsplash.com/random/100x100/?robot,future,blue',
     avatarBgClass: 'bg-indigo-100',
     name: 'Flux | Decentralized Cloud',
     isVerified: true,
@@ -78,12 +79,12 @@ const testimonialsData = [
   },
   {
     id: 6,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?pixel,art,man',
+    avatarUrl: 'https://source.unsplash.com/random/100x100/?pixel,art,man,sunglasses',
     avatarBgClass: 'bg-rose-100',
     name: 'Sergeant Sol',
     isVerified: true,
     role: 'Cofounder @Colosseum',
-    twitterHandle: '@Colosseum', // Assuming same as Mattytay for example
+    twitterHandle: '@Colosseum',
     ratingValue: 4.2,
     testimonialText: [
         "The Folks At @DeCharge__ Are Some Of The Most Cracked Builders I Know With An Insanely Exciting Vision For The Future Of Decentralized Energy",
@@ -94,16 +95,14 @@ const testimonialsData = [
   },
 ];
 
-// Add this to your global CSS or a <style jsx global> tag if using Next.js
-/*
-
-*/
 
 const AudienceSection = () => {
+  const sectionBgColor = 'bg-slate-50'; // Define section background color for the gradient
+
   return (
-    <section className="py-16 md:py-24 bg-slate-50">
+    <section className={`py-16 md:py-24 ${sectionBgColor}`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 md:mb-12"> {/* Increased bottom margin for title section */}
           <span className="inline-block bg-sky-100 text-sky-700 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase mb-4">
             Why Trust Us?
           </span>
@@ -116,10 +115,38 @@ const AudienceSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-16 md:gap-y-20">
-          {testimonialsData.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-          ))}
+        {/* Wrapper for the grid and the fade overlay */}
+        <div className="relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-16 md:gap-y-20 lg:items-start">
+            {testimonialsData.map((testimonial, index) => {
+              let cardOuterClass = "";
+              if (index % 3 === 1) {
+                cardOuterClass = "lg:min-h-[32rem]";
+              } else {
+                cardOuterClass = "lg:min-h-[26rem]";
+              }
+             
+
+
+              return (
+                <TestimonialCard
+                  key={testimonial.id}
+                  testimonial={testimonial}
+                  outerCardClassName={cardOuterClass}
+                />
+              );
+            })}
+          </div>
+
+          {/* Fade overlay: Only show if there's enough content to scroll (e.g. more than 1 row for lg) */}
+          {/* This condition is a simple proxy; a more robust check might involve JS or more specific CSS based on content height */}
+          {testimonialsData.length > 3 && ( // Assuming 3 columns for lg
+            <div
+              className={`absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent pointer-events-none`}
+              // The `from-slate-50` should match `sectionBgColor`
+              // `via-slate-50/80` helps smooth the gradient if the section bg is not pure white/black
+            ></div>
+          )}
         </div>
       </div>
     </section>
