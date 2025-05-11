@@ -1,9 +1,7 @@
-// src/components/AudienceSection.js
 import React from 'react';
-import TestimonialCard from './TestimonialCard'; // Adjust path
+import TestimonialCard from './TestimonialCard'; // Adjust path as needed
 
-// Assume testimonialsData is the same as in the previous correct version
-const testimonialsData = [
+const testimonialsData = [ // Make sure you have all 6 items as in previous examples
   {
     id: 1,
     avatarUrl: 'https://source.unsplash.com/random/100x100/?portrait,man,coding,lines',
@@ -95,14 +93,62 @@ const testimonialsData = [
   },
 ];
 
-
 const AudienceSection = () => {
-  const sectionBgColor = 'bg-slate-50'; // Define section background color for the gradient
+  const sectionBgColor = 'bg-slate-50';
+
+  // Helper function to distribute items into columns
+  const distributeToColumns = (data, numColumns) => {
+    const columns = Array.from({ length: numColumns }, () => []);
+    data.forEach((item, index) => {
+      columns[index % numColumns].push(item); // Distribute items round-robin
+    });
+    return columns;
+  };
+
+  // Component to render a set of columns
+  const ColumnsLayout = ({ numColumns }) => {
+    const columnsData = distributeToColumns(testimonialsData, numColumns);
+
+    return (
+      <>
+        {columnsData.map((columnItems, colIndex) => (
+          // Each column is flex-1 to share width in the parent flex container
+          // The parent container (e.g., md:flex) will have the gap-x-6
+          <div key={colIndex} className="flex flex-col flex-1">
+            {columnItems.map((testimonialItem, itemIndexInColumn) => {
+              let cardOuterClass = "";
+              // Apply taller style if it's the middle column in a 3-column layout
+              if (numColumns === 3 && colIndex === 1) {
+                cardOuterClass = "lg:min-h-[32rem]"; // Taller middle card
+              } else if (numColumns === 3) {
+                cardOuterClass = "lg:min-h-[26rem]"; // Shorter side cards
+              }
+              // You can add similar logic for `md` (2-column) if needed:
+              // else if (numColumns === 2 && colIndex === X) { cardOuterClass = "md:min-h-[Yrem]"; }
+
+              return (
+                // Apply margin-top for vertical gap, except for the first item in each column
+                <div
+                  key={testimonialItem.id}
+                  className={itemIndexInColumn > 0 ? 'mt-6 md:mt-8' : ''}
+                >
+                  <TestimonialCard
+                    testimonial={testimonialItem}
+                    outerCardClassName={cardOuterClass}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </>
+    );
+  };
 
   return (
     <section className={`py-16 md:py-24 ${sectionBgColor}`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12"> {/* Increased bottom margin for title section */}
+        <div className="text-center mb-8 md:mb-12">
           <span className="inline-block bg-sky-100 text-sky-700 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase mb-4">
             Why Trust Us?
           </span>
@@ -115,36 +161,33 @@ const AudienceSection = () => {
           </p>
         </div>
 
-        {/* Wrapper for the grid and the fade overlay */}
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-16 md:gap-y-20 lg:items-start">
-            {testimonialsData.map((testimonial, index) => {
-              let cardOuterClass = "";
-              if (index % 3 === 1) {
-                cardOuterClass = "lg:min-h-[32rem]";
-              } else {
-                cardOuterClass = "lg:min-h-[26rem]";
-              }
-             
-
-
-              return (
-                <TestimonialCard
-                  key={testimonial.id}
-                  testimonial={testimonial}
-                  outerCardClassName={cardOuterClass}
-                />
-              );
-            })}
+          {/* Small screens: Single column layout */}
+          <div className="md:hidden space-y-6"> {/* space-y handles vertical gaps */}
+            {testimonialsData.map(testimonial => (
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                // No specific outerCardClassName needed for varied heights in single column
+              />
+            ))}
           </div>
 
-          {/* Fade overlay: Only show if there's enough content to scroll (e.g. more than 1 row for lg) */}
-          {/* This condition is a simple proxy; a more robust check might involve JS or more specific CSS based on content height */}
-          {testimonialsData.length > 3 && ( // Assuming 3 columns for lg
+          {/* Medium screens: 2 columns */}
+          <div className="hidden md:flex lg:hidden gap-x-6">
+            <ColumnsLayout numColumns={2} />
+          </div>
+
+          {/* Large screens: 3 columns */}
+          <div className="hidden lg:flex gap-x-6">
+            <ColumnsLayout numColumns={3} />
+          </div>
+
+          {/* Fade overlay - condition might need to be more robust depending on actual content height vs viewport */}
+          {/* For simplicity, show if more items than can fit in one row of the largest column count (3) */}
+          {testimonialsData.length > 3 && (
             <div
-              className={`absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent pointer-events-none`}
-              // The `from-slate-50` should match `sectionBgColor`
-              // `via-slate-50/80` helps smooth the gradient if the section bg is not pure white/black
+              className={`absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent pointer-events-none z-10`}
             ></div>
           )}
         </div>
