@@ -41,10 +41,9 @@ const TestimonialCard = ({ testimonial, outerCardClassName = '' }) => { // Added
   };
 
   return (
-    // Applied outerCardClassName to the outermost div of the card
     <div className={`bg-white rounded-2xl shadow-xl flex flex-col relative pt-12 ${outerCardClassName}`}>
       {/* Avatar Section - Positioned to overlap */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute top-0 -translate-y-1/2 flex justify-start">
         <div className="relative">
           <div className={`w-24 h-24 rounded-full ${avatarBgClass} flex items-center justify-center`}>
             <img
@@ -83,7 +82,7 @@ const TestimonialCard = ({ testimonial, outerCardClassName = '' }) => { // Added
           </a>
         )}
 
-        <div className="text-sm text-slate-600 leading-relaxed space-y-2 mt-2 flex-grow"> {/* `flex-grow` here helps push footer content down if card has extra space */}
+        <div className="text-sm text-slate-600 leading-relaxed space-y-2 mt-2 flex-grow"> 
           {renderTestimonialText(testimonialText)}
         </div>
       </div>

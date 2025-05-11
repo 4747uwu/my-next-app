@@ -24,7 +24,8 @@ const Footer = ({ ctaOverlapAmount = 0 }) => {
 
   return (
     <footer
-      className="bg-black text-slate-300 rounded-t-3xl relative pt-20 md:pt-28 lg:pt-32 h-screen flex justify-center items-center"
+      className="bg-black text-slate-300 rounded-t-3xl relative pt-20 md:pt-28 lg:pt-32 h-screen flex justify-between
+ items-center"
       style={{
         marginTop: `-${ctaOverlapAmount}px`,
         
@@ -42,7 +43,7 @@ const Footer = ({ ctaOverlapAmount = 0 }) => {
 
       {/* Main Footer Content Container */}
       <div className="container mx-auto px-6 py-12 md:py-16 lg:py-20 relative z-1"> {/* z-1 for content above big logo */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 ">
           {/* Column 1: Powering India */}
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-white">
@@ -62,7 +63,7 @@ const Footer = ({ ctaOverlapAmount = 0 }) => {
           </div>
 
           {/* Column 2: Pages */}
-          <div className="space-y-3">
+          <div className="space-y-3 mb-40">
             <h4 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Pages</h4>
             <ul className="space-y-2">
               {pageLinks.map(link => (
@@ -76,7 +77,7 @@ const Footer = ({ ctaOverlapAmount = 0 }) => {
           </div>
 
           {/* Column 3: Contact Us */}
-          <div className="space-y-3">
+          <div className="space-y-3 ">
             <h4 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Contact Us</h4>
             <p>
               <a href="mailto:support@decharge.network" className="hover:text-sky-400 transition-colors">
@@ -90,7 +91,7 @@ const Footer = ({ ctaOverlapAmount = 0 }) => {
         </div>
 
         {/* Big Decharge Logo - Positioned at the bottom, behind content */}
-        <div className="absolute bottom-10 md:bottom-16 left-1/2 -translate-x-1/2 w-full text-center -z-0 pointer-events-none">
+        <div className="absolute mt-40 bottom-10 md:bottom-16 left-1/2 -translate-x-1/2 w-full text-center -z-0 pointer-events-none items-end">
           <h1 className="text-[80px] sm:text-[120px] md:text-[150px] lg:text-[200px] font-bold text-sky-600 opacity-10 leading-none select-none">
             DECHARGE
           </h1>
