@@ -3,10 +3,6 @@
 import React from 'react';
 import Button from './Button'; // Assuming your Button component
 
-
-
-
-
 const cardBackgroundColor = "bg-white";
 const cardBorderColor = "border-gray-200/50"; // Very subtle border
 const cardShadow = "shadow-[0_4px_25px_rgba(100,100,150,0.08)]"; // Soft, diffused shadow
@@ -37,7 +33,7 @@ const investmentTooltipBorder = "border-gray-200/70";
 const investmentTooltipShadow = "shadow-lg";
 
 const InfrastructureChart = () => {
- 
+
   const barData = [
     { color: '#D1FAE5' }, { color: '#A7F3D0' }, { color: '#6EE7B7' }, // Mints
     { color: '#FDBA74' }, { color: '#FB923C' }, { color: '#F97316' }, // Oranges
@@ -104,10 +100,10 @@ const PeopleInterestChart = () => {
   const svgViewBoxHeight = 50;
 
   const arcStrokeWidth = 18; // Target stroke is much thicker
-  
-  
-  const radiusForPath = 48; 
-  const cyForPath = 56; 
+
+
+  const radiusForPath = 48;
+  const cyForPath = 56;
 
   const circumference = 2 * Math.PI * radiusForPath;
   const arcActualLength = circumference / 2;
@@ -115,27 +111,27 @@ const PeopleInterestChart = () => {
 
   return (
     <div className="relative w-[120px] h-[60px] mx-auto my-1.5"> {/* Adjusted margin */}
-      <svg 
-        viewBox={`${svgViewBoxWidth/2 - radiusForPath - arcStrokeWidth/2} ${cyForPath - radiusForPath - arcStrokeWidth/2} ${2*radiusForPath + arcStrokeWidth} ${radiusForPath + arcStrokeWidth/2}`} // Dynamically adjust viewBox to fit
-        className="w-full h-full transform  origin-center" 
-        style={{overflow: 'visible'}} // Allow stroke to go slightly out if linecaps make it so
+      <svg
+        viewBox={`${svgViewBoxWidth / 2 - radiusForPath - arcStrokeWidth / 2} ${cyForPath - radiusForPath - arcStrokeWidth / 2} ${2 * radiusForPath + arcStrokeWidth} ${radiusForPath + arcStrokeWidth / 2}`} // Dynamically adjust viewBox to fit
+        className="w-full h-full transform  origin-center"
+        style={{ overflow: 'visible' }} // Allow stroke to go slightly out if linecaps make it so
       >
         <defs>
           <linearGradient id="peopleInterestGradientFinal" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor={peopleInterestGradientStart} />
-            <stop offset="40%" stopColor={peopleInterestGradientMid} /> 
+            <stop offset="40%" stopColor={peopleInterestGradientMid} />
             <stop offset="100%" stopColor={peopleInterestGradientEnd} />
           </linearGradient>
         </defs>
         <path
-          d={`M ${svgViewBoxWidth/2 - radiusForPath} ${cyForPath} A ${radiusForPath} ${radiusForPath} 0 0 1 ${svgViewBoxWidth/2 + radiusForPath} ${cyForPath}`}
+          d={`M ${svgViewBoxWidth / 2 - radiusForPath} ${cyForPath} A ${radiusForPath} ${radiusForPath} 0 0 1 ${svgViewBoxWidth / 2 + radiusForPath} ${cyForPath}`}
           fill="none"
           stroke={peopleInterestTrackColor}
           strokeWidth={arcStrokeWidth}
           strokeLinecap="round"
         />
         <path
-          d={`M ${svgViewBoxWidth/2 - radiusForPath} ${cyForPath} A ${radiusForPath} ${radiusForPath} 0 0 1 ${svgViewBoxWidth/2 + radiusForPath} ${cyForPath}`}
+          d={`M ${svgViewBoxWidth / 2 - radiusForPath} ${cyForPath} A ${radiusForPath} ${radiusForPath} 0 0 1 ${svgViewBoxWidth / 2 + radiusForPath} ${cyForPath}`}
           fill="none"
           stroke="url(#peopleInterestGradientFinal)"
           strokeWidth={arcStrokeWidth}
@@ -164,7 +160,7 @@ const InvestmentChart = () => {
 
   return (
     <div className="relative w-full h-[65px] my-1.5"> {/* Adjusted height and margin */}
-      <svg viewBox="0 0 100 40" className="w-full h-full" style={{overflow: 'visible'}}>
+      <svg viewBox="0 0 100 40" className="w-full h-full" style={{ overflow: 'visible' }}>
         <path d={pathData} fill="none" stroke={investmentLineColor} strokeWidth="2" />
         <circle cx={pointCx} cy={pointCy} r="3.5" fill={investmentPointFillColor} stroke={investmentPointStrokeColor} strokeWidth="2" />
         <foreignObject
@@ -205,14 +201,14 @@ const StatCard = ({ title, chart, value, description, valueColorClass, valueText
 
 
 const MarketGrowthSection = () => {
-  const accentTitleBlue = "text-[#4338CA]"; 
+  const accentTitleBlue = "text-[#4338CA]";
 
   const handleReserveCTA = () => {
     console.log("Market Growth CTA Reserve button clicked!");
   };
 
   return (
-    <div className="py-16 md:py-20 flex items-center justify-center h-screen bg-gradient-to-br from-[#F9FAFB] via-[#F3F4F6] to-white"> {/* Very light gray gradient */}
+    <div className="py-16 md:py-20 flex items-center justify-center h-screen bg-blue-50/90"> {/* Very light gray gradient */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Badge */}
         <div className="flex justify-center mb-6">
@@ -275,20 +271,23 @@ const MarketGrowthSection = () => {
 
         {/* CTA Section (reusing structure from OfferDetailsSection) */}
         <div className="bg-gradient-to-r from-blue-100 via-indigo-50 to-indigo-500 rounded-2xl p-4 md:p-10 shadow-xl flex flex-col md:flex-row justify-between items-center w-[78%] mx-auto"> {/* Removed fixed height, added mx-auto for centering */}
-                  <div className="text-black mb-6 md:mb-0 text-center md:text-left">
-                    <h3 className="text-2xl md:text-3xl font-bold">Ready To Secure Your Bundle?</h3> {/* Adjusted size, weight */}
-                    <p className="text-sm text-black-100 mt-1.5"> {/* Adjusted margin */}
-                      Lock In Your 5-Device Bundle Now Before They're Gone
-                    </p>
-                  </div>
-                  {/* Assuming Button component forwards className and handles styling */}
-                  <Button 
-                    onClick={handleReserveCTA} 
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-7 rounded-lg shadow-md text-base transition-colors duration-150"
-                  >
-                    Reserve Your Bundle Now
-                  </Button>
-                </div>
+          <div className="text-black mb-6 md:mb-0 text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-bold">Unlock earning potential</h3> {/* Adjusted size, weight */}
+            <p className="text-sm text-black-100 mt-1.5"> {/* Adjusted margin */}
+              Lock in your 5-device bundle now before they’re gone
+            </p>
+          </div>
+          {/* Assuming Button component forwards className and handles styling */}
+          <button
+            onClick={handleReserveCTA}
+            className="py-3 px-8 rounded-full text-base font-semibold text-white transition-all duration-300 ease-in-out hover:opacity-90 focus:outline-none focus:ring-2   focus:ring-opacity-50 transparentbutton cursor-pointer"
+            style={{
+              background: 'linear-gradient(93.36deg, #2236B8 -15.13%, #4D64FF 106.46%)'
+            }}
+          >
+            Reserve Your Bundle Now
+          </button>
+        </div>
       </div>
     </div>
   );
