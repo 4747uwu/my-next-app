@@ -83,26 +83,26 @@ const HeroSection = () => {
         </div>
 
 
-        <div className="relative w-full max-w-6xl mx-auto flex items-center justify-center py-0  mt-40 z-0 ">
+        <div className="relative w-full max-w-6xl mx-auto flex items-center justify-center py-0  mt-50 z-0 ">
           
           {/* Left Glow */}
           <img
             src={cShape.src}
             alt="Glow"
-            className="absolute left-[15%] sm:left-[50%] top-[30%] w-[50%] sm:w-[45%] md:w-[28%] h-auto opacity-100 z-0 -rotate-12 filter brightness-[150%] drop-shadow-xl"
+            className="hidden sm:block absolute left-[15%] sm:left-[50%] top-[30%] w-[50%] sm:w-[45%] md:w-[28%] h-auto opacity-100 z-0 -rotate-12 filter brightness-[150%] drop-shadow-xl"
           />
           {/* Right Glow */}
           <img
             src={cShape.src}
             alt="Glow"
-            className="absolute right-[5%] sm:right-[50%] bottom-[30%] w-[50%] sm:w-[45%] md:w-[28%] h-auto opacity-100 z-0 rotate-12 scale-x-[-1] filter brightness-125 drop-shadow-lg"
+                 className="hidden sm:block absolute right-[5%] sm:right-[50%] bottom-[30%] sm:bottom-[30%] w-[50%] sm:w-[45%] md:w-[28%] h-auto opacity-100 z-0 rotate-12 scale-x-[-1] filter brightness-125 drop-shadow-lg"
           />
 
           {/* Charger Image */}
           <img
             src={dechargeDevice.src}
             alt="Decharge Mini Bundle"
-            className="relative w-[100%] scale-[170%] sm:w-[60%] md:w-[55%] h-auto z-10"
+            className="relative w-[100%] scale-[170%] sm:w-[60%] md:w-[55%] h-auto  z-10"
             style={{
               filter: 'drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.5))',
               clipPath: 'inset(0 0 25% 0)'
