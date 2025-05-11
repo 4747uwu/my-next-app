@@ -1,4 +1,4 @@
-'use client';   
+'use client';
 import React from 'react';
 import Button from './Button'; // Assuming Button.js is in the same directory
 import Image from 'next/image';
@@ -9,7 +9,7 @@ const StarIcon = () => <span className="text-2xl text-blue-500">⭐</span>;
 const ClockIcon = () => <span className="text-2xl text-blue-500">🕒</span>;
 
 // Detail icons - ensuring they are blue
-const CubeIcon = () => <span className="text-blue-500 text-lg">🧊</span>; 
+const CubeIcon = () => <span className="text-blue-500 text-lg">🧊</span>;
 const PercentIcon = () => <span className="text-blue-500 text-lg">%</span>;
 const RupeeIcon = () => <span className="text-blue-500 text-lg">₹</span>;
 const LightningIcon = () => <span className="text-blue-500 text-lg">⚡</span>;
@@ -17,23 +17,23 @@ const CalendarIcon = () => <span className="text-blue-500 text-lg">📅</span>;
 
 const OfferCard = ({ icon, title, description, details }) => {
   return (
-    <div className="bg-white rounded-2xl p-6 pt-8 md:p-7 md:pt-9 shadow-md border border-gray-100 relative flex flex-col h-full mx-2"> 
+    <div className="bg-white rounded-2xl p-6 pt-8 md:p-7 md:pt-9 shadow-md border border-gray-100 relative flex flex-col h-full mx-2">
       <span className="absolute top-3 right-3 w-1 h-1 bg-gray-200 rounded-full"></span>
       <span className="absolute top-3 right-6 w-1 h-1 bg-gray-200 rounded-full"></span>
       <span className="absolute bottom-3 left-3 w-1 h-1 bg-gray-200 rounded-full"></span>
       <span className="absolute bottom-3 left-6 w-1 h-1 bg-gray-200 rounded-full"></span>
 
       {/* Icon and Horizontal Line */}
-      <div className="relative mb-5 w-full flex justify-start items-center"> 
-        <div className="bg-blue-100 text-blue-500 inline-flex items-center justify-center p-3 rounded-full relative z-10"> 
+      <div className="relative mb-5 w-full flex justify-start items-center">
+        <div className="bg-blue-100 text-blue-500 inline-flex items-center justify-center p-3 rounded-full relative z-10">
           {icon}
         </div>
-        <hr className="absolute left-0 right-0 w-full border-t border-gray-200 transform -translate-y-1/2 top-1/2 z-0" /> 
+        <hr className="absolute left-0 right-0 w-full border-t border-gray-200 transform -translate-y-1/2 top-1/2 z-0" />
       </div>
 
       <h3 className="text-xl font-medium text-gray-800 mb-2">{title}</h3>
       <p className="text-gray-600 text-sm mb-6 flex-grow">{description}</p>
-      
+
       <ul className="space-y-3">
         {details.map((detail, index) => (
           <li key={index} className="flex items-center text-sm text-gray-700">
@@ -117,7 +117,12 @@ const OfferDetailsSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-blue-100 via-indigo-50 to-indigo-500 rounded-2xl p-4 md:p-10 shadow-xl flex flex-col md:flex-row justify-between items-center w-[78%] mx-auto"> {/* Removed fixed height, added mx-auto for centering */}
+        <div
+          className="bg-gradient-to-r rounded-2xl p-4 md:p-10 shadow-xl flex flex-col md:flex-row justify-between items-center w-[78%] mx-auto"
+          style={{
+            background: 'linear-gradient(93.78deg, #D8DDFF 61.9%, #3852FF 87.39%)',
+          }}
+        > {/* Removed fixed height, added mx-auto for centering */}
           <div className="text-black mb-6 md:mb-0 text-center md:text-left">
             <h3 className="text-2xl md:text-3xl font-bold">Ready To Secure Your Bundle?</h3> {/* Adjusted size, weight */}
             <p className="text-sm text-black-100 mt-1.5"> {/* Adjusted margin */}
@@ -125,12 +130,15 @@ const OfferDetailsSection = () => {
             </p>
           </div>
           {/* Assuming Button component forwards className and handles styling */}
-          <Button 
-            onClick={handleReserveCTA} 
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-7 rounded-lg shadow-md text-base transition-colors duration-150"
+          <button
+            onClick={handleReserveCTA}
+            className="py-3 px-8 rounded-full text-base font-semibold text-white transition-all duration-300 ease-in-out hover:opacity-90 focus:outline-none focus:ring-2   focus:ring-opacity-50 transparentbutton cursor-pointer"
+            style={{
+              background: 'linear-gradient(93.36deg, #2236B8 -15.13%, #4D64FF 106.46%)'
+            }}
           >
             Reserve Your Bundle Now
-          </Button>
+          </button>
         </div>
       </div>
     </div>
@@ -147,9 +155,9 @@ const MyImageDisplay = () => {
         alt="DeCharge Mini Product Image"
         width={1084} // Original width of the image
         height={902} // Original height of the image
-        // You can add layout="responsive" if you want the image to scale with its parent container,
-        // while maintaining aspect ratio. If using layout="responsive", width and height props define the aspect ratio.
-        // layout="responsive" 
+      // You can add layout="responsive" if you want the image to scale with its parent container,
+      // while maintaining aspect ratio. If using layout="responsive", width and height props define the aspect ratio.
+      // layout="responsive" 
       />
     </div>
   );

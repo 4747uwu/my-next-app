@@ -113,7 +113,7 @@ const AudienceSection = () => {
       <>
         {columnsData.map((columnItems, colIndex) => (
         
-          <div key={colIndex} className="flex flex-col flex-1">
+          <div key={colIndex} className="flex flex-col flex-1 bg-blue-50/90">
             {columnItems.map((testimonialItem, itemIndexInColumn) => {
               let cardOuterClass = "";
               
@@ -128,7 +128,7 @@ const AudienceSection = () => {
                 
                 <div
                   key={testimonialItem.id}
-                  className={itemIndexInColumn > 0 ? 'mt-6 md:mt-8' : ''}
+                  className={itemIndexInColumn > 0 ? 'mt-6 md:mt-8 bg-blue-50/90' : 'bg-blue-50/90'}
                 >
                   <TestimonialCard
                     testimonial={testimonialItem}
@@ -144,7 +144,7 @@ const AudienceSection = () => {
   };
 
   return (
-    <section className={`py-16 md:py-24 ${sectionBgColor}`}>
+    <section className={`py-16 md:py-24  bg-blue-50/90`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
           <span className="inline-block bg-sky-100 text-sky-700 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase mb-4">

@@ -65,7 +65,7 @@ const EarningPotentialCard = ({ amount, title, description, textColor = "text-bl
 
 const EarningSection = () => {
   return (
-    <div className="bg-white text-white py-16 px-6  ">
+    <div className=" text-white py-16 px-6  bg-blue-50/90">
     <div className="bg-black text-white py-16 px-6 rounded-xl">
       <div className="max-w-6xl mx-auto">
         {/* "How It Works?" Badge */}
