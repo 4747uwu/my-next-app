@@ -41,7 +41,7 @@ const TestimonialCard = ({ testimonial, outerCardClassName = '' }) => { // Added
   };
 
   return (
-    <div className={`bg-white rounded-2xl shadow-xl flex flex-col relative pt-12 mb-14 md:mb-6`}>
+    <div className={`bg-white rounded-2xl flex flex-col relative pt-12 mb-14 md:mb-6`}>
       {/* Avatar Section - Positioned to overlap */}
       <div className="absolute top-0 left-5 -translate-y-1/2 flex justify-start">
         <div className="relative">

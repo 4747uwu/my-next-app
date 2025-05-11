@@ -149,30 +149,71 @@ const PeopleInterestChart = () => {
 };
 
 
-const InvestmentChart = () => {
-  // New path and point based on target visual
-  const pathData = "M5 28 Q 20 33, 45 18 T 75 25 L 85 12 Q 90 8, 95 15"; // Adjusted path
-  const pointCx = 45; // Highlighted point X
-  const pointCy = 18; // Highlighted point Y
+// ...existing code...
 
-  const tooltipWidth = 80; // Adjusted for potentially longer text
-  const tooltipHeight = 34; // Adjusted for two lines of text
+const InvestmentChart = () => {
+  const pathData = "M5 28 Q 20 33, 45 18 T 75 25 L 85 12 Q 90 8, 95 15";
+  const pointCx = 45;
+  const pointCy = 18;
+  const viewBoxHeight = 40; // Bottom of the chart in SVG units
+
+  // Area path: follows pathData, then goes down to bottom, across, and closes
+  const areaPathData = `${pathData} L95 ${viewBoxHeight} L5 ${viewBoxHeight} Z`;
+
+  // Tooltip dimensions (pixels) and positioning (SVG units)
+  const tooltipWidthPx = 90; // Adjusted for new content and padding
+  const tooltipHeightPx = 42; // Adjusted for new content and padding
+
+  // Position tooltip in bottom right of the SVG viewBox
+  // These are SVG units for the top-left corner of the foreignObject
+  const tooltipSvgX = 58; // (100 viewBoxWidth - approx 38 (tooltip width in svg units) - 4 padding)
+  const tooltipSvgY = 20; // (40 viewBoxHeight - approx 17 (tooltip height in svg units) - 3 padding)
+
 
   return (
-    <div className="relative w-full h-[65px] my-1.5"> {/* Adjusted height and margin */}
+    <div className="relative w-full h-[65px] my-1.5">
       <svg viewBox="0 0 100 40" className="w-full h-full" style={{ overflow: 'visible' }}>
+        <defs>
+          <linearGradient id="investmentAreaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor={investmentLineColor} stopOpacity="0.2"/>
+            <stop offset="100%" stopColor={investmentLineColor} stopOpacity="0"/>
+          </linearGradient>
+        </defs>
+
+        {/* Area Fill */}
+        <path d={areaPathData} fill="url(#investmentAreaGradient)" />
+
+        {/* Data Line */}
         <path d={pathData} fill="none" stroke={investmentLineColor} strokeWidth="2" />
+
+        {/* Vertical Line from Point */}
+        <line
+          x1={pointCx}
+          y1={pointCy}
+          x2={pointCx}
+          y2={viewBoxHeight}
+          stroke="#E5E7EB" // Tailwind gray-200
+          strokeWidth="1"
+        />
+
+        {/* Highlighted Point */}
         <circle cx={pointCx} cy={pointCy} r="3.5" fill={investmentPointFillColor} stroke={investmentPointStrokeColor} strokeWidth="2" />
+
+        {/* Tooltip */}
         <foreignObject
-          x={pointCx - tooltipWidth / 2}
-          y={pointCy + 7} // Position tooltip below the point (cy + radius + buffer)
-          width={tooltipWidth}
-          height={tooltipHeight}
+          x={tooltipSvgX}
+          y={tooltipSvgY}
+          width={tooltipWidthPx}
+          height={tooltipHeightPx}
         >
-          <div className={`${investmentTooltipBg} p-1.5 rounded-md ${investmentTooltipBorder} border ${investmentTooltipShadow} text-[9px] leading-tight whitespace-nowrap text-center`}>
+          <div 
+            className={`${investmentTooltipBg} p-2.5 rounded-lg ${investmentTooltipBorder} border shadow-xl text-[10px] leading-snug`}
+            // Using shadow-xl for a softer, larger shadow as in image
+            // Adjusted padding and rounded corners
+          >
             <div className={`font-semibold ${titleColor} text-[10px]`}>April 05, 2025</div>
-            <div className={`${descriptionColor} flex items-center justify-center mt-0.5 text-[9px]`}>
-              <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-1"></span>
+            <div className={`${descriptionColor} flex items-center mt-1 text-[9px]`}>
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-1.5"></span>
               EVs bought: 167,629
             </div>
           </div>
@@ -181,6 +222,8 @@ const InvestmentChart = () => {
     </div>
   );
 };
+
+// ...existing code...
 
 const StatCard = ({ title, chart, value, description, valueColorClass, valueTextSize = "text-2xl", descriptionClass = "" }) => {
   return (
@@ -232,7 +275,7 @@ const MarketGrowthSection = () => {
         </p>
 
         {/* Stat Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-16 md:mb-20 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-16 md:mb-20 max-w-6xl mx-auto">
           <StatCard
             title="Infrastructure Gap"
             chart={<InfrastructureChart />}
@@ -272,24 +315,25 @@ const MarketGrowthSection = () => {
         </div>
 
         {/* CTA Section (reusing structure from OfferDetailsSection) */}
-        <div className="bg-gradient-to-r from-blue-100 via-indigo-50 to-indigo-500 rounded-2xl p-4 md:p-10 shadow-xl flex flex-col md:flex-row justify-between items-center w-[78%] mx-auto"> {/* Removed fixed height, added mx-auto for centering */}
-          <div className="text-black mb-6 md:mb-0 text-center md:text-left">
-            <h3 className="text-2xl md:text-3xl font-bold">Unlock earning potential</h3> {/* Adjusted size, weight */}
-            <p className="text-sm text-black-100 mt-1.5"> {/* Adjusted margin */}
-              Lock in your 5-device bundle now before they’re gone
-            </p>
-          </div>
-          {/* Assuming Button component forwards className and handles styling */}
-          <button
-            onClick={handleReserveCTA}
-            className="py-3 px-8 rounded-full text-base font-semibold text-white transition-all duration-300 ease-in-out hover:opacity-90 focus:outline-none focus:ring-2   focus:ring-opacity-50 transparentbutton cursor-pointer"
-            style={{
-              background: 'linear-gradient(93.36deg, #2236B8 -15.13%, #4D64FF 106.46%)'
-            }}
+        <div className="mt-16 md:mt-20 max-w-6xl mx-auto">
+        <div 
+            className="p-8 md:p-10 rounded-2xl shadow-xl text-white flex flex-col md:flex-row items-center justify-between"
+            style={{ background: 'linear-gradient(115.78deg, #D8DDFF 61.9%, #3852FF 87.39%)' }}
           >
-            Reserve Your Bundle Now
-          </button>
+            <div className="text-center md:text-left mb-6 md:mb-0">
+              <h2 className="text-2xl text-black md:text-3xl font-bold mb-1.5">
+                Ready To Secure Your Bundle?
+              </h2>
+              <p className="text-black text-sm md:text-base">
+                Lock In Your 5-Device Bundle Now Before They're Gone
+              </p>
+            </div>
+            <button className="bg-white text-indigo-700 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-indigo-50 transition-colors duration-300 whitespace-nowrap">
+              Reserve Your Bundle Now
+            </button>
+          </div>
         </div>
+
       </div>
     </div>
   );

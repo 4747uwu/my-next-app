@@ -183,11 +183,11 @@ const AudienceSection = () => {
             <ColumnsLayout numColumns={3} />
           </div>
 
-          {/* Fade overlay - condition might need to be more robust depending on actual content height vs viewport */}
-          {/* For simplicity, show if more items than can fit in one row of the largest column count (3) */}
+          {/* Fade overlay */}
+          {/* Show if there's enough content to potentially be cut off or scroll */}
           {testimonialsData.length > 3 && (
             <div
-            // className={`absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent pointer-events-none z-10`}
+              className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-b from-transparent to-blue-50/90 pointer-events-none"
             ></div>
           )}
         </div>
