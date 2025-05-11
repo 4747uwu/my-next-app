@@ -1,92 +1,59 @@
+// src/components/JoinCommunityCTA.js
 import React from 'react';
-import { Zap } from 'lucide-react';
+import { LightningBoltIcon } from './icons/Footer'; // Assuming Icons.js is in the same folder or adjust path
 
-export default function JoinCommunitySection() {
+// Placeholder for the 3D product image - replace with your actual image path
+const productImage = '/images/decharge-device.png'; // Example path, put your image in public/images
+
+const JoinCommunityCTA = () => {
   return (
-    <div className="w-full bg-black text-white relative overflow-hidden">
-      {/* Main Content Container */}
-      <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between relative">
+    <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl shadow-2xl p-8 md:p-10 relative overflow-visible text-white max-w-4xl mx-auto">
+      <div className="flex flex-col md:flex-row items-center">
         {/* Left Content */}
-        <div className="z-10 mb-8 md:mb-0 md:w-1/2">
-          {/* Small Highlight Badge */}
-          <div className="flex items-center mb-4">
-            <div className="bg-blue-900 rounded-full p-1 mr-2">
-              <Zap className="h-4 w-4 text-blue-400" />
+        <div className="md:w-3/5 lg:w-1/2 space-y-5 md:space-y-6 text-center md:text-left relative z-10">
+          <div className="flex items-center justify-center md:justify-start space-x-2">
+            <div className="bg-slate-700 p-1.5 rounded-full">
+              <LightningBoltIcon className="w-4 h-4 text-sky-400" />
             </div>
-            <span className="text-blue-400 text-sm font-medium tracking-wide">DON'T WAIT</span>
+            <span className="text-xs font-semibold text-sky-400 uppercase tracking-wider">
+              Don't Wait
+            </span>
           </div>
-          
-          {/* Main Heading */}
-          <h2 className="text-4xl md:text-5xl font-bold mb-3">Join The Community</h2>
-          
-          {/* Subtitle */}
-          <p className="text-gray-400 mb-6">
-            Get Early Access, Welcome to the <span className="text-white">future of EV revolution</span>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+            Join The Community
+          </h2>
+          <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed">
+            Get Early Access, Welcome to the future of EV revolution
           </p>
-          
-          {/* CTA Button with Glow Effect */}
-          <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-full font-medium shadow-lg transition-all duration-300 border border-blue-500 relative">
-            <span className="relative z-10">Reserve Your Bundle Now</span>
-            <div className="absolute inset-0 rounded-full bg-blue-600 blur-md opacity-70"></div>
+
+          <button
+            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50 text-sm sm:text-base"
+          >
+            Reserve Your Bundle Now
           </button>
-        </div>
-        
-        {/* Right Image - EV Charger */}
-        <div className="md:w-1/2 flex justify-center md:justify-end relative z-10">
-          <div className="relative w-64 h-80">
-            {/* EV Charger Device */}
-            <div className="bg-gray-200 rounded-lg p-4 w-full h-full flex items-center justify-center relative">
-              {/* The Charger Body */}
-              <div className="bg-white rounded-lg w-48 h-64 relative shadow-lg flex flex-col">
-                {/* Top of Charger - Logo and Plug */}
-                <div className="flex justify-between p-2">
-                  <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
-                    <div className="w-5 h-5 text-gray-600">⚡</div>
-                  </div>
-                  <div className="w-8 h-8 bg-black rounded-sm flex items-center justify-center">
-                    <span className="text-xs text-white">DeCharge</span>
-                  </div>
-                </div>
-                
-                {/* Middle Section - Glow Effect */}
-                <div className="flex-grow flex items-center justify-center relative">
-                  <div className="w-32 h-24 bg-green-500 relative overflow-hidden">
-                    {/* Lightning Bolt */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <svg width="40" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 3L4 14H11L10 21L19 10H12L13 3Z" fill="purple" stroke="cyan" strokeWidth="0.5" />
-                      </svg>
-                    </div>
-                    
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400 to-transparent opacity-50"></div>
-                  </div>
-                </div>
-                
-                {/* Bottom of Charger */}
-                <div className="h-6 flex justify-center items-end pb-2">
-                  <span className="text-xs text-gray-500">DeCharge</span>
-                </div>
-              </div>
-            </div>
+
+          {/* Decorative Dots - bottom left of text area */}
+          <div className="hidden md:flex absolute bottom-[-20px] left-[-10px] space-x-2 opacity-30">
+            <div className="w-3 h-3 bg-slate-600 rounded-full"></div>
+            <div className="w-3 h-3 bg-slate-600 rounded-full"></div>
+            <div className="w-3 h-3 bg-slate-600 rounded-full"></div>
           </div>
         </div>
+
+        {/* Right Image - Positioned to allow overlap */}
+        <div className="md:w-2/5 lg:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end relative">
+           {/* This div helps control image positioning and potential overflow */}
+          <img
+            src={productImage}
+            alt="DeCharge EV Charger"
+            className="w-60 h-auto sm:w-72 md:w-80 lg:w-[350px] object-contain relative md:absolute md:right-[-30px] lg:right-[-50px] md:bottom-[-40px] lg:bottom-[-60px] transform md:translate-y-1/4"
+            // Adjust md:right, lg:right, md:bottom, lg:bottom and transform for precise positioning
+          />
+        </div>
       </div>
-      
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-30">
-        {/* Dark Circle in Background */}
-        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-96 h-96 bg-gray-800 rounded-full blur-md"></div>
-        
-        {/* Small Dots Pattern */}
-        <div className="absolute left-24 top-16 w-4 h-4 bg-blue-500 rounded-full opacity-20"></div>
-        <div className="absolute left-12 top-48 w-6 h-6 bg-blue-500 rounded-full opacity-20"></div>
-        <div className="absolute left-32 bottom-24 w-5 h-5 bg-blue-500 rounded-full opacity-20"></div>
-        <div className="absolute right-1/4 top-12 w-3 h-3 bg-blue-500 rounded-full opacity-20"></div>
-      </div>
-      
-      {/* Bottom Border */}
-      <div className="h-2 w-full bg-gradient-to-r from-blue-900 via-purple-700 to-blue-900"></div>
     </div>
   );
-}
+};
+
+export default JoinCommunityCTA;
