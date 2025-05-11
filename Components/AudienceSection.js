@@ -112,22 +112,20 @@ const AudienceSection = () => {
     return (
       <>
         {columnsData.map((columnItems, colIndex) => (
-          // Each column is flex-1 to share width in the parent flex container
-          // The parent container (e.g., md:flex) will have the gap-x-6
+        
           <div key={colIndex} className="flex flex-col flex-1">
             {columnItems.map((testimonialItem, itemIndexInColumn) => {
               let cardOuterClass = "";
-              // Apply taller style if it's the middle column in a 3-column layout
+              
               if (numColumns === 3 && colIndex === 1) {
-                cardOuterClass = "lg:min-h-[32rem]"; // Taller middle card
+                cardOuterClass = "lg:min-h-[32rem]"; 
               } else if (numColumns === 3) {
-                cardOuterClass = "lg:min-h-[26rem]"; // Shorter side cards
+                cardOuterClass = "lg:min-h-[26rem]"; 
               }
-              // You can add similar logic for `md` (2-column) if needed:
-              // else if (numColumns === 2 && colIndex === X) { cardOuterClass = "md:min-h-[Yrem]"; }
+              
 
               return (
-                // Apply margin-top for vertical gap, except for the first item in each column
+                
                 <div
                   key={testimonialItem.id}
                   className={itemIndexInColumn > 0 ? 'mt-6 md:mt-8' : ''}
@@ -168,7 +166,7 @@ const AudienceSection = () => {
               <TestimonialCard
                 key={testimonial.id}
                 testimonial={testimonial}
-                // No specific outerCardClassName needed for varied heights in single column
+                
               />
             ))}
           </div>
