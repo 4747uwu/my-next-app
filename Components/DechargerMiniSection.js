@@ -39,7 +39,7 @@ const CountdownSegment = ({ value, label }) => (
 
 const DechargeMiniSection = () => {
   return (
-    <div className="p-6 sm:p-2 md:p-6 bg-white"> 
+    <div className="p-6 sm:p-2 md:p-6 bg-blue-50/90"> 
       <div className="bg-[#080B12] text-gray-200 rounded-xl md:rounded-2xl shadow-xl shadow-blue-900/20 p-6 sm:p-8 md:p-10 relative">
         
         <div className="mb-10 md:mb-12"> 
