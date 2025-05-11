@@ -36,3 +36,22 @@ body {
   background-clip: text;
   text-fill-color: transparent;
 }
+
+
+.gradient-btn {
+  background: linear-gradient(to right, #2236B8, #4D64FF);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.gradient-div {
+  background: linear-gradient(to right, #2236B8, #4D64FF);
+  color: white;
+ 
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}

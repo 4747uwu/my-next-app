@@ -221,6 +221,8 @@ const MarketGrowthSection = () => {
           </div>
         </div>
 
+
+
         {/* Main Heading */}
         <h2 className="text-3xl md:text-4xl lg:text-[58px] text-gray-800 text-center mb-4">
           India's <span className={`${accentTitleBlue}`}>EV Market</span> Growth
