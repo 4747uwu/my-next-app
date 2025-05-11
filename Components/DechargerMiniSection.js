@@ -7,14 +7,15 @@ import dechargeMiniImage from '../assets/3963aed2e7506a6c050877cef54991ccd3921ac
 
 // Placeholder avatars
 const avatars = [
-  "https://via.placeholder.com/32/FFA500/FFFFFF?Text=U1", // Adjusted size to 32px
-  "https://via.placeholder.com/32/008000/FFFFFF?Text=U2",
-  "https://via.placeholder.com/32/FF0000/FFFFFF?Text=U3",
-  "https://via.placeholder.com/32/800080/FFFFFF?Text=U4",
-  "https://via.placeholder.com/32/0000FF/FFFFFF?Text=U5",
-  "https://via.placeholder.com/32/FFFF00/000000?Text=U6",
-  "https://via.placeholder.com/32/A52A2A/FFFFFF?Text=U7",
-  "https://via.placeholder.com/32/00FFFF/000000?Text=U8",
+  "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
+  "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
+  
 ];
 
 const accentBlue = "text-[#4F80E8]"; // Eyedropped this blue from the image, slightly different from default blue-500
@@ -43,7 +44,7 @@ const DechargeMiniSection = () => {
         
         <div className="mb-10 md:mb-12"> 
           <div className="flex items-center justify-start mb-3">
-            <span className="inline-block px-2.5 py-1 rounded-full font-bold uppercase text-[9px] bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
+            <span className="inline-block px-2.5 py-1 rounded-full font-bold uppercase text-[12px] bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
               What It Is?
             </span>
             <span className="h-px w-10 bg-gray-700 ml-3"></span>
