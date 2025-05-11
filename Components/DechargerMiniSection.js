@@ -25,13 +25,12 @@ const avatars = [
 
 
 const accentBlue = "text-[#4F80E8]"; // Eyedropped this blue from the image, slightly different from default blue-500
-
 const TechSpecCard = ({ title, description }) => (
   <div className="bg-[#10151D] p-5 rounded-xl h-[200px] w-full flex flex-col relative overflow-hidden group">
     {/* Waves background animation */}
     <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
       <Waves 
-        lineColor="rgb(130, 122, 122)"
+        lineColor="rgba(79, 128, 232, 0.4)"
         backgroundColor="transparent"
         waveSpeedX={0.0075}
         waveSpeedY={0.003}
@@ -43,15 +42,23 @@ const TechSpecCard = ({ title, description }) => (
       />
     </div>
     
+    {/* Left border with sharper fade effect at top and bottom */}
     <div className="absolute left-0 top-0 w-1 h-full">
+      {/* Glowing border */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-indigo-500 to-blue-600
                     shadow-[0_0_12px_4px_rgba(79,128,232,0.4)] group-hover:shadow-[0_0_16px_6px_rgba(79,128,232,0.5)] 
                     transition-all duration-500"></div>
-      {/* Sharper fade mask that covers top and bottom */}
+      
+      {/* More aggressive fade mask for thinner appearance */}
       <div className="absolute inset-0 bg-gradient-to-b 
-                    from-[#10151D] from-10% 
-                    via-transparent via-30% 
-                    to-[#10151D] to-90%"></div>
+                    from-[#10151D] from-0% 
+                    via-[#10151D] via-15% 
+                    to-[#10151D] to-85%">
+        <div className="absolute inset-0 bg-gradient-to-b 
+                      from-transparent from-15% 
+                      via-transparent via-40% 
+                      to-transparent to-60%"></div>
+      </div>
     </div>
     
     {/* Hover glow effect */}
