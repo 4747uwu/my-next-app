@@ -67,8 +67,7 @@ const BundlePackageCard = () => {
         </div>
       </div> {/* End of p-6/p-8 content div */}
 
-      {/* Corner Dots - Positioned relative to the outermost card div */}
-      {/* Top-Right Dot 1 (Above HR line) */}
+     
       <div
         className="absolute w-1.5 h-1.5 bg-slate-300 rounded-full z-20"
         style={{
