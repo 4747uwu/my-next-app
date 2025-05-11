@@ -58,7 +58,7 @@ const OfferDetailsSection = () => {
   const cardMinHeight = "min-h-[300px] md:min-h-[320px]"; // Example min-height
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-indigo-100/30"> {/* Example section background */}
+    <section className="py-16 md:py-24 bg-blue-50/90"> {/* Example section background */}
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
         <div className="relative inline-flex items-center">

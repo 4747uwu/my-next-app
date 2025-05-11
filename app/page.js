@@ -8,7 +8,7 @@ import EarningSection from "../Components/Earning";
 import AudienceSection from "../Components/AudienceSection";
 import JoinCommunityCTA from "../Components/JointheCommunity";
 import Footer from "../Components/Footer";
-import CardComonent from "../Components/CardComponent";
+// import CardComonent from "../Components/CardComponent";////
 
 export default function Home() {
   const estimatedCtaHeightForOverlapCalcLg = 380; // pixels
@@ -21,7 +21,7 @@ export default function Home() {
     <div className="min-h-screen bg-blue-50">
       <Navbar />
       <Hero />
-      <CardComonent />
+      {/* <CardComonent /> */}
 
       <OfferDetailsSection />
       <DechargeMiniSection />
