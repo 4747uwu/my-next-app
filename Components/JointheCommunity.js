@@ -1,13 +1,15 @@
 // src/components/JoinCommunityCTA.js
 import React from 'react';
-import { LightningBoltIcon } from './icons/Footer'; // Assuming Icons.js is in the same folder or adjust path
+import { LightningBoltIcon } from './icons/Footer'; // Adjust path if needed
 
-// Placeholder for the 3D product image - replace with your actual image path
-const productImage = '/images/decharge-device.png'; // Example path, put your image in public/images
+// IMPORTANT: Replace with your actual image path. Place in `public/images/`
+const productImage = '/images/decharge-device.png';
 
 const JoinCommunityCTA = () => {
   return (
-    <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl shadow-2xl p-8 md:p-10 relative overflow-visible text-white max-w-4xl mx-auto">
+   
+    <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl shadow-2xl p-8 md:p-10 relative text-white max-w-6xl mx-auto">
+      {/* overflow-visible is removed as image positioning is handled carefully */}
       <div className="flex flex-col md:flex-row items-center">
         {/* Left Content */}
         <div className="md:w-3/5 lg:w-1/2 space-y-5 md:space-y-6 text-center md:text-left relative z-10">
@@ -41,14 +43,14 @@ const JoinCommunityCTA = () => {
           </div>
         </div>
 
-        {/* Right Image - Positioned to allow overlap */}
+        {/* Right Image - Positioned to visually break out of the card */}
         <div className="md:w-2/5 lg:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end relative">
-           {/* This div helps control image positioning and potential overflow */}
           <img
             src={productImage}
             alt="DeCharge EV Charger"
-            className="w-60 h-auto sm:w-72 md:w-80 lg:w-[350px] object-contain relative md:absolute md:right-[-30px] lg:right-[-50px] md:bottom-[-40px] lg:bottom-[-60px] transform md:translate-y-1/4"
-            // Adjust md:right, lg:right, md:bottom, lg:bottom and transform for precise positioning
+            className="w-60 h-auto sm:w-72 md:w-80 lg:w-[350px] object-contain relative md:absolute md:right-[-30px] lg:right-[-50px] md:bottom-[-40px] lg:bottom-[-60px]"
+            // The image is positioned relative to this container.
+            // It will naturally appear on top of the footer if this CTA card overlaps.
           />
         </div>
       </div>

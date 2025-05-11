@@ -2,7 +2,7 @@
 import React from 'react';
 import { XIcon, TelegramIcon, LinkedInIcon, HeartIcon, MapPinIcon } from './icons/Footer'; // Adjust path
 
-const Footer = () => {
+const Footer = ({ ctaOverlapAmount = 0 }) => {
   const socialLinks = [
     { Icon: XIcon, href: '#' },
     { Icon: TelegramIcon, href: '#' },
@@ -19,13 +19,20 @@ const Footer = () => {
   const locations = [
     { city: 'Hyderabad', Icon: MapPinIcon },
     { city: 'Bengaluru', Icon: MapPinIcon },
-    { city: 'Denver', Icon: MapPinIcon },
+    // Note: The image shows "and Denver." separately.
   ];
 
   return (
-    <footer className="bg-black text-slate-300 rounded-t-3xl relative pt-20 md:pt-28 lg:pt-32"> {/* pt gives space for CTA */}
-      {/* Decorative Top Lines */}
-      <div className="absolute top-10 md:top-16 lg:top-20 left-0 right-0 px-4 md:px-8">
+    <footer
+      className="bg-black text-slate-300 rounded-t-3xl relative pt-20 md:pt-28 lg:pt-32 h-screen flex justify-center items-center"
+      style={{
+        marginTop: `-${ctaOverlapAmount}px`,
+        
+        zIndex: 0,
+      }}
+    >
+      
+      <div className="absolute top-10 md:top-16 lg:top-20 mt-19 left-0 right-0 px-4 md:px-8">
         <div className="space-y-1 max-w-6xl mx-auto">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="h-px bg-sky-500/30 w-full"></div>
@@ -33,7 +40,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-12 md:py-16 lg:py-20 relative"> {/* Relative for big logo */}
+      {/* Main Footer Content Container */}
+      <div className="container mx-auto px-6 py-12 md:py-16 lg:py-20 relative z-1"> {/* z-1 for content above big logo */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Column 1: Powering India */}
           <div className="space-y-4">
@@ -89,20 +97,20 @@ const Footer = () => {
         </div>
 
         {/* Made with line */}
-        <div className="mt-16 md:mt-20 pt-8 border-t border-slate-700/50 flex flex-col sm:flex-row justify-center items-center text-center text-sm space-y-2 sm:space-y-0 sm:space-x-2 text-slate-500 relative z-10">
+        <div className="mt-16 md:mt-20 pt-8 border-t border-slate-700/50 flex flex-col sm:flex-row justify-center items-center text-center text-sm space-y-2 sm:space-y-0 sm:space-x-2 text-slate-500 relative z-1">
           <span>Made with</span>
-          <HeartIcon className="w-4 h-4 text-red-500 inline-block" />
+          <HeartIcon className="w-4 h-4 text-red-500 inline-block mx-1" />
           <span>in</span>
           {locations.map((loc, index) => (
             <React.Fragment key={loc.city}>
-              {index > 0 && <span className="hidden sm:inline">, </span>}
-              <span className="flex items-center">
+              <span className="flex items-center ml-1">
                 <loc.Icon className="w-4 h-4 text-slate-400 mr-1" />
                 {loc.city}
+                {index < locations.length -1 && <span className="hidden sm:inline">,</span>}
               </span>
             </React.Fragment>
           ))}
-          <span>and Denver.</span> {/* The image shows Denver repeated, keeping it as is */}
+          <span className="ml-1">and Denver.</span>
         </div>
       </div>
     </footer>
