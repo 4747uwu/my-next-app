@@ -4,8 +4,8 @@ import TestimonialCard from './TestimonialCard'; // Adjust path as needed
 const testimonialsData = [ // Make sure you have all 6 items as in previous examples
   {
     id: 1,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?portrait,man,coding,lines',
-    avatarBgClass: 'bg-sky-100',
+    avatarUrl: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+    avatarBgClass: 'bg-blue-50/90',
     name: 'Phil Hedayatnia',
     isVerified: true,
     role: 'Running A Founder-Friendly Design Firm @Airfoilstudio',
@@ -16,8 +16,8 @@ const testimonialsData = [ // Make sure you have all 6 items as in previous exam
   },
   {
     id: 2,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?portrait,man,suit,outdoor',
-    avatarBgClass: 'bg-slate-100',
+    avatarUrl: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+    avatarBgClass: 'bg-blue-50/90',
     name: 'Pratik',
     isVerified: true,
     role: 'GP@Levitate_labs Accelerating @Base Builders',
@@ -35,8 +35,8 @@ const testimonialsData = [ // Make sure you have all 6 items as in previous exam
   },
   {
     id: 3,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?portrait,woman,tech,neon',
-    avatarBgClass: 'bg-teal-50',
+    avatarUrl: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+    avatarBgClass: 'bg-blue-50/90',
     name: 'Mattytay',
     isVerified: true,
     role: 'Cofounder @Colosseum',
@@ -47,8 +47,8 @@ const testimonialsData = [ // Make sure you have all 6 items as in previous exam
   },
   {
     id: 4,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?abstract,logo,dark',
-    avatarBgClass: 'bg-neutral-800',
+    avatarUrl: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+    avatarBgClass: 'bg-blue-50/90',
     name: 'DePHY',
     isVerified: true,
     isAvatarDark: true,
@@ -63,10 +63,10 @@ const testimonialsData = [ // Make sure you have all 6 items as in previous exam
     ],
     highlightTerm: '@DeCharge__',
   },
-   {
+  {
     id: 5,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?robot,future,blue',
-    avatarBgClass: 'bg-indigo-100',
+    avatarUrl: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+    avatarBgClass: 'bg-blue-50/90',
     name: 'Flux | Decentralized Cloud',
     isVerified: true,
     role: '@RunOnFlux',
@@ -77,17 +77,17 @@ const testimonialsData = [ // Make sure you have all 6 items as in previous exam
   },
   {
     id: 6,
-    avatarUrl: 'https://source.unsplash.com/random/100x100/?pixel,art,man,sunglasses',
-    avatarBgClass: 'bg-rose-100',
+    avatarUrl: 'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
+    avatarBgClass: 'bg-blue-50/90',
     name: 'Sergeant Sol',
     isVerified: true,
     role: 'Cofounder @Colosseum',
     twitterHandle: '@Colosseum',
     ratingValue: 4.2,
     testimonialText: [
-        "The Folks At @DeCharge__ Are Some Of The Most Cracked Builders I Know With An Insanely Exciting Vision For The Future Of Decentralized Energy",
-        " ",
-        "Hear More About Their Plans In Their Chat With @Dylangbane Below"
+      "The Folks At @DeCharge__ Are Some Of The Most Cracked Builders I Know With An Insanely Exciting Vision For The Future Of Decentralized Energy",
+      " ",
+      "Hear More About Their Plans In Their Chat With @Dylangbane Below"
     ],
     highlightTerm: '@DeCharge__',
   },
@@ -112,20 +112,20 @@ const AudienceSection = () => {
     return (
       <>
         {columnsData.map((columnItems, colIndex) => (
-        
+
           <div key={colIndex} className="flex flex-col flex-1 bg-blue-50/90">
             {columnItems.map((testimonialItem, itemIndexInColumn) => {
               let cardOuterClass = "";
-              
+
               if (numColumns === 3 && colIndex === 1) {
-                cardOuterClass = "lg:min-h-[32rem]"; 
+                cardOuterClass = "lg:min-h-[32rem]";
               } else if (numColumns === 3) {
-                cardOuterClass = "lg:min-h-[26rem]"; 
+                cardOuterClass = "lg:min-h-[26rem]";
               }
-              
+
 
               return (
-                
+
                 <div
                   key={testimonialItem.id}
                   className={itemIndexInColumn > 0 ? 'mt-6 md:mt-8 bg-blue-50/90' : 'bg-blue-50/90'}
@@ -146,15 +146,17 @@ const AudienceSection = () => {
   return (
     <section className={`py-16 md:py-24  bg-blue-50/90`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12">
-          <span className="inline-block bg-sky-100 text-sky-700 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase mb-4">
-            Why Trust Us?
-          </span>
+        <div className="text-center mb-15 md:mb-16">
+          <div className="inline-flex items-center justify-center mb-8">
+            <div className="h-px w-8  bg-indigo-300/80 gradient-div"></div>
+            <span className="mx-3 text-[9px] font-bold uppercase text-indigo-700 bg-indigo-200/80 px-4  p-2 rounded-md tracking-wider">Why Trust Us</span>
+            <div className="h-px w-8 bg-gray-700 gradient-div"></div>
+          </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800">
             Hear From{' '}
             <span className="text-gradient-blue-purple">Our Global Audience</span>
           </h2>
-          <p className="text-slate-600 mt-4 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 mt-4 text-base md:text-lg max-w-2xl mx-auto ">
             Real stories from real DeCharge Hosts across globe
           </p>
         </div>
@@ -166,7 +168,7 @@ const AudienceSection = () => {
               <TestimonialCard
                 key={testimonial.id}
                 testimonial={testimonial}
-                
+
               />
             ))}
           </div>
@@ -185,7 +187,7 @@ const AudienceSection = () => {
           {/* For simplicity, show if more items than can fit in one row of the largest column count (3) */}
           {testimonialsData.length > 3 && (
             <div
-              className={`absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent pointer-events-none z-10`}
+            // className={`absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent pointer-events-none z-10`}
             ></div>
           )}
         </div>

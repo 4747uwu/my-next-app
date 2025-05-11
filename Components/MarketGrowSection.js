@@ -208,18 +208,18 @@ const MarketGrowthSection = () => {
   };
 
   return (
-    <div className="py-16 md:py-20 flex items-center justify-center h-screen bg-blue-50/90"> {/* Very light gray gradient */}
+    <div className="py-16 md:py-20 flex items-center justify-center min-h-screen bg-blue-50/90"> {/* Very light gray gradient */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Badge */}
         <div className="flex justify-center mb-6">
           <div className="relative inline-flex items-center">
-            <span className="absolute left-0 top-1/2 w-6 h-px bg-indigo-300/80 -translate-y-1/2 -translate-x-full"></span>
-            <span className="bg-indigo-100 text-indigo-700 text-[9px] font-bold uppercase px-3.5 py-1.5 rounded-md tracking-wider">
-              Why This Matters?
-            </span>
-            <span className="absolute right-0 top-1/2 w-6 h-px bg-indigo-300/80 -translate-y-1/2 translate-x-full"></span>
+            <div className="h-px w-8  bg-indigo-300/80 gradient-div"></div>
+            <span className="mx-3 text-[9px] font-bold uppercase text-indigo-700 bg-indigo-200/80 px-4  p-2 rounded-md tracking-wider">Why This Matters?</span>
+            <div className="h-px w-8 bg-gray-700 gradient-div"></div>
           </div>
         </div>
+
+      
 
 
 

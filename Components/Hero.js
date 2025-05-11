@@ -18,7 +18,7 @@ const HeroSection = () => {
 
     >
       {/* Main Content Box */}
-      <div className="relative bg-[#10141D] h-fit p-0 sm:p-0 md:pt-16 sm:pb-0 rounded-3xl shadow-2xl w-full max-w-8xl mx-auto border border-slate-700/50 z-20 py-0 mb-0 overflow-hidden">
+      <div className="relative bg-[#10141D] min-h-screen p-0 sm:p-0 md:pt-16 sm:pb-0 rounded-3xl shadow-2xl w-full max-w-8xl mx-auto border border-slate-700/50 z-20 py-0 mb-0 overflow-hidden">
 
         {/* Floating Decorative Icons */}
         <div className="absolute top-[10%] left-[5%] md:left-[8%] text-slate-500 opacity-30 select-none pointer-events-none transform -rotate-12">

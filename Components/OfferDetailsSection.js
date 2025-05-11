@@ -86,13 +86,13 @@ const OfferDetailsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Offer Details Badge */}
         <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-6">
           <div className="relative inline-flex items-center">
-            <span className="absolute left-0 top-1/2 w-8 h-px bg-indigo-300 -translate-y-1/2 -translate-x-full"></span>
-            <span className="bg-indigo-100 text-indigo-600 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-md">
-              Offer Details
-            </span>
-            <span className="absolute right-0 top-1/2 w-8 h-px bg-indigo-300 -translate-y-1/2 translate-x-full"></span>
+            <div className="h-px w-8  bg-indigo-300/80 gradient-div"></div>
+            <span className="mx-3 text-[9px] font-bold uppercase text-indigo-700 bg-indigo-200/80 px-4  p-2 rounded-md tracking-wider">Offer Details</span>
+            <div className="h-px w-8 bg-gray-700 gradient-div"></div>
           </div>
+        </div>
         </div>
 
         {/* Main Heading */}
