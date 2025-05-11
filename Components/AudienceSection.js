@@ -187,7 +187,7 @@ const AudienceSection = () => {
           {/* Show if there's enough content to potentially be cut off or scroll */}
           {testimonialsData.length > 3 && (
             <div
-              className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-b from-transparent to-blue-50/90 pointer-events-none"
+              className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-b from-transparent to-blue-50/90 pointer-events-none sm:flex hidden"
             ></div>
           )}
         </div>

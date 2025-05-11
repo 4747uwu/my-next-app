@@ -55,3 +55,8 @@ body {
   border-radius: 2rem;
   cursor: pointer;
 }
+
+
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}

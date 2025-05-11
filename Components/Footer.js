@@ -9,15 +9,15 @@ import footerlogo from '@/assets/footerlogo.png';
 
 const Footer = () => {
   return (
-    <footer className='p-5 pt-0'>
-      <div className="bg-black text-white w-full relative overflow-x-hidden rounded-2xl pt-32">
+    <footer className='sm:p-5 p-0 pt-0'>
+      <div className="bg-black text-white w-full relative overflow-x-hidden rounded-xl sm:rounded-2xl pt-32">
         {/* Blue horizontal lines decoration */}
         <div className="h-4 w-full relative">
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
-              className="absolute h-[4px] bg-blue-400 w-full"
-              style={{ top: i * 10, opacity: 0.7 - i * 0.1 }}
+              className="absolute bg-blue-400 w-full"
+              style={{ top: i * 10, height: `${2 + i}px`, opacity: 0.7 + i * 0.1 }}
             />
           ))}
         </div>
@@ -110,7 +110,7 @@ const Footer = () => {
               <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black via-black/70 to-transparent z-20 pointer-events-none"></div>
 
               {/* Logo Image */}
-              <div className="relative w-full h-20 scale-150 z-10">
+              <div className="relative w-full h-20 md:scale-125 lg:scale-150 z-10">
                 <Image
                   src={footerlogo.src}
                   alt="Decharge Logo"
@@ -127,16 +127,16 @@ const Footer = () => {
 
               {/* Hyderabad */}
               <div className="flex items-center gap-1">
-                <span className='mr-3'>Hyderabad</span>
-                <div className="relative w-10 h-10 rotate-12">
+                <span className='sm:mr-3'>Hyderabad</span>
+                <div className="relative w-10 h-10 rotate-12 hidden sm:flex">
                   <Image
                     src={hyderabad.src}
                     alt="Hyderabad map"
                     layout="fill"
                     objectFit="cover"
-                    className="rounded-lg"
+                    className="rounded-lg hidden sm:flex"
                   />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 hidden sm:flex" >
                     <div className="w-3 h-3 bg-blue-500 rounded-full flex items-center justify-center">
                       <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
                     </div>
@@ -146,16 +146,16 @@ const Footer = () => {
 
               {/* Bengaluru */}
               <div className="flex items-center gap-1">
-                <span className=' mr-3'>Bengaluru</span>
-                <div className="relative w-10 h-10 -rotate-12">
+                <span className=' sm:mr-3'>Bengaluru</span>
+                <div className="relative w-10 h-10 -rotate-12 hidden sm:flex">
                   <Image
                     src={bengaluru.src}
                     alt="Bengaluru map"
                     layout="fill"
                     objectFit="cover"
-                    className="rounded-lg"
+                    className="rounded-lg hidden sm:flex"
                   />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 hidden sm:flex">
                     <div className="w-3 h-3 bg-blue-500 rounded-full flex items-center justify-center">
                       <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
                     </div>
@@ -165,16 +165,16 @@ const Footer = () => {
 
               {/* Denver */}
               <div className="flex items-center gap-1">
-                <span className='mr-3'>Denver</span>
-                <div className="relative w-10 h-10 rotate-3">
+                <span className='sm:mr-3'>Denver</span>
+                <div className="relative w-10 h-10 rotate-3 hidden sm:flex">
                   <Image
                     src={denver.src}
                     alt="Denver map"
                     layout="fill"
                     objectFit="cover"
-                    className="rounded-lg"
+                    className="rounded-lg hidden sm:flex"
                   />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 hidden sm:flex">
                     <div className="w-3 h-3 bg-blue-500 rounded-full flex items-center justify-center">
                       <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
                     </div>

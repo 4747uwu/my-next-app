@@ -61,7 +61,7 @@ const OfferDetailsSection = () => {
     <section className="py-16 md:py-24 bg-blue-50/90"> {/* Example section background */}
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-        <div className="relative inline-flex items-center">
+        <div className="relative inline-flex items-center mb-6">
             <div className="h-px w-8  bg-indigo-300/80 gradient-div"></div>
             <span className="mx-3 text-[9px] font-bold uppercase text-indigo-700 bg-indigo-200/80 px-4  p-2 rounded-md tracking-wider">Offer Details</span>
             <div className="h-px w-8 bg-gray-700 gradient-div"></div> {/* Consider consistent bg color for lines */}
@@ -74,7 +74,7 @@ const OfferDetailsSection = () => {
         </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-[76%] justify-items-center justify-center mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-[90%] justify-items-center justify-center mx-auto">
           {offerData.map((offer) => (
             <OfferDetailCard
               key={offer.id}

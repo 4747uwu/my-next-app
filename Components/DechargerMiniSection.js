@@ -38,36 +38,25 @@ const TechSpecCard = ({ title, description }) => (
         maxCursorMove={50}
       />
     </div>
-    
-    {/* Left border with sharper fade effect at top and bottom */}
+
+    {/* Enhanced Left border with glowing effect */}
     <div className="absolute left-0 top-0 w-1 h-full">
-      {/* Glowing border */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-indigo-500 to-blue-600
-                    shadow-[0_0_12px_4px_rgba(79,128,232,0.4)] group-hover:shadow-[0_0_16px_6px_rgba(79,128,232,0.5)] 
-                    transition-all duration-500"></div>
-      
-      {/* More aggressive fade mask for thinner appearance */}
-      <div className="absolute inset-0 bg-gradient-to-b 
-                    from-[#10151D] from-0% 
-                    via-[#10151D] via-15% 
-                    to-[#10151D] to-85%">
-        <div className="absolute inset-0 bg-gradient-to-b 
-                      from-transparent from-15% 
-                      via-transparent via-40% 
-                      to-transparent to-60%"></div>
-      </div>
+      {/* Removed the complex border structure */}
     </div>
-    
+
+    {/* Vertical glowing line on left side */}
+    <span className="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-blue-400/0 via-blue-400/90 to-blue-400/0 opacity-60 transition-opacity duration-500 group-hover:opacity-90 shadow-[0_0_8px_2px_rgba(79,128,232,0.4)]"></span>
+
     {/* Hover glow effect */}
     <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-br from-blue-400 via-transparent to-transparent 
-                  transition-opacity duration-700 pointer-events-none"></div>
-    
+              transition-opacity duration-700 pointer-events-none"></div>
+
     {/* Content */}
     <div className="pl-4 relative z-10">
       <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">{title}</h4>
       <p className="text-xs text-gray-400 leading-relaxed flex-grow group-hover:text-gray-300 transition-colors duration-300">{description}</p>
     </div>
-    
+
     {/* Corner accent */}
     <div className="absolute bottom-2 right-2 w-6 h-6 opacity-20 border-b border-r border-blue-400 rounded-br"></div>
   </div>
@@ -102,7 +91,7 @@ const DechargeMiniSection = () => {
       <div className="bg-[#080B12] min-h-screen text-gray-200 rounded-xl md:rounded-2xl shadow-xl shadow-blue-900/20 p-4 sm:p-6 md:p-8 lg:p-10 relative overflow-hidden">
         
         {/* Header Section */}
-        <div className="mb-6 md:mb-8 lg:mb-12"> 
+        <div className="mb-6 md:mb-8 lg:mb-12 md:ml-16 ml-0"> 
           <div className="flex items-center mb-4">
             <div className="bg-[#10151D] inline-block px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">
               <span className="text-[8px] sm:text-[10px] font-bold uppercase tracking-wider text-blue-400">

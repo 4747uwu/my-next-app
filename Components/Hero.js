@@ -43,14 +43,36 @@ const HeroSection = () => {
         </div>
 
         {/* Early Access Banner */}
-        <div className="flex justify-center mb-6 sm:mb-8">
-          <div className="bg-black/70 border border-slate-700 text-gray-300 py-2 px-5 rounded-full text-xs sm:text-sm font-medium inline-flex items-center z-10">
-            <span className="text-green-400 mr-2 text-lg leading-none animate-pulse">●</span>
-            Early access available from May 10th 2025
-            <ChevronRight size={16} className="ml-1 text-gray-500" />
+        <div className="flex justify-center mb-6 sm:mb-8 mt-6 md:mt-0">
+        <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block">
+          <span className="absolute inset-0 overflow-hidden rounded-full">
+            <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+          </span>
+          <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950  px-4 ring-1 ring-white/10 py-2">
+            <span>
+            <span className="text-green-400 mr-2 text-sm leading-none animate-pulse">●</span>
+              Early access available from May 10th 2025
+            </span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M10.75 8.75L14.25 12L10.75 15.25"
+              ></path>
+            </svg>
           </div>
+          <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
+        </button>
         </div>
-
+        
         {/* Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4 sm:mb-5 max-w-4xl mx-auto text-center z-10">
           Power India's EV Revolution
@@ -84,7 +106,7 @@ const HeroSection = () => {
 
 
         <div className="relative w-full max-w-6xl mx-auto flex items-center justify-center py-0  mt-50 z-0 ">
-          
+
           {/* Left Glow */}
           <img
             src={cShape.src}
@@ -95,7 +117,7 @@ const HeroSection = () => {
           <img
             src={cShape.src}
             alt="Glow"
-                 className="hidden sm:block absolute right-[5%] sm:right-[50%] bottom-[30%] sm:bottom-[30%] w-[50%] sm:w-[45%] md:w-[28%] h-auto opacity-100 z-0 rotate-12 scale-x-[-1] filter brightness-125 drop-shadow-lg"
+            className="hidden sm:block absolute right-[5%] sm:right-[50%] bottom-[30%] sm:bottom-[30%] w-[50%] sm:w-[45%] md:w-[28%] h-auto opacity-100 z-0 rotate-12 scale-x-[-1] filter brightness-125 drop-shadow-lg"
           />
 
           {/* Charger Image */}
